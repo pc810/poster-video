@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Poster</title>
+    <meta name="description" content="app to create poster   video">
+    <link href="./index.css" rel="stylesheet">
+</head>
+</head>
+
+<body class="min-h-screen">
+    <header class="col-span-2 h-12 bg-white flex items-center px-8 border-b justify-between">
+        <h1 class="font-bold text-xl">Poster Video</h1>
+        <a href="https://github.com/pc810/poster-video">
+            <img src="./GitHub-Mark-64px.png" alt="Github" class="h-6" />
+        </a>
+
+    </header>
+    <main class="grid grid-cols-1 md:grid-cols-2 bg-neutral-50" style="height: calc(100vh - 48px)">
+        <div class="flex flex-col p-2">
+
+
+            <form class="w-full mb-4">
+                <label class="block mb-2 text-lg font-semibold" for="file">Your Video</label>
+                <input
+                    class="block w-full text-sm text-gray-900 border border-gray-300 rounded-sm cursor-pointer bg-gray-50 p-1"
+                    id="file" type="file" />
+
+            </form>
+            <div class="w-full h-96 border rounded-sm  flex items-center px-6 py-2 mb-4 shadow-md">
+                <video muted class="h-full" controls></video>
+            </div>
+
+            <div class="flex gap-3">
+                <button type="button" id="dec-frame"
+                    class="block px-6 py-2.5 bg-black text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-white hover:text-black hover:shadow-lg focus:bg-white focus:text-black focus:shadow-lg focus:outline-none focus:ring-0 active:bg-white active:text-black active:shadow-lg transition duration-150 ease-in-out border border-transparent hover:border-black focus:border-black active:border-black">
+                    -1 Frame
+                </button>
+                <button type="button" id="inc-frame"
+                    class="block px-6 py-2.5 bg-black text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-white hover:text-black hover:shadow-lg focus:bg-white focus:text-black focus:shadow-lg focus:outline-none focus:ring-0 active:bg-white active:text-black active:shadow-lg transition duration-150 ease-in-out border border-transparent hover:border-black focus:border-black active:border-black">
+                    +1 Frame
+                </button>
+            </div>
+
+
+
+
+        </div>
+        <div class="flex flex-col p-2 justify-between">
+            <div class="text-lg mb-2 font-semibold">
+                Canvas
+                <div class="w-full h-96  rounded-sm  flex items-center px-6 mt-[60px] mb-4 border shadow-md">
+                    <canvas class="max-h-full max-w-full"></canvas>
+                </div>
+                <button type="button" id="save"
+                    class="block px-6 py-2.5 bg-black text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-white hover:text-black hover:shadow-lg focus:bg-white focus:text-black focus:shadow-lg focus:outline-none focus:ring-0 active:bg-white active:text-black active:shadow-lg transition duration-150 ease-in-out border border-transparent hover:border-black focus:border-black active:border-black w-max">
+                    Save
+                </button>
+            </div>
+        </div>
+        <div class="col-span-2 p-2">
+            <div class="font-bold text-lg">Meta</div>
+            <div class="flex gap-10 flex-wrap" id="meta-grid">
+                No Data
+            </div>
+        </div>
+    </main>
+    <script src="./index.ts"></script>
+</body>
+
+</html>
