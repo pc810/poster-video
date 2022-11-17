@@ -5,7 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel src/index.html",
-    "build": "parcel build --public-url ./poster-video/ src/index.html",
+    "build": "parcel build --public-url ./ src/index.html",
     "deploy": "RD /S /Q dist && npm run build && gh-pages -d dist"
   },
   "keywords": [],
