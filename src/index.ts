@@ -1,4 +1,6 @@
 const _video: HTMLVideoElement = document.querySelector("video")!;
+const _canvasContainer: HTMLDivElement =
+  document.querySelector(".canvas-container")!;
 const _canvas: HTMLCanvasElement = document.querySelector("canvas")!;
 const _file: HTMLInputElement = document.querySelector("#file")!;
 const _frameDecButton: HTMLButtonElement =
@@ -7,6 +9,8 @@ const _frameIncButton: HTMLButtonElement =
   document.querySelector("#inc-frame")!;
 const _saveButton: HTMLButtonElement = document.querySelector("#save")!;
 const _uiContainer: HTMLDivElement = document.querySelector("#meta-grid")!;
+const _bgButtons: NodeListOf<HTMLButtonElement> =
+  document.querySelectorAll("button[data-color]");
 
 let _prevUploadedObjectUrl: string | null = null;
 
@@ -126,3 +130,8 @@ _file.addEventListener("change", () => {
 _frameDecButton.addEventListener("click", () => app.moveByFrame(-1));
 _frameIncButton.addEventListener("click", () => app.moveByFrame(1));
 _saveButton.addEventListener("click", () => app.save());
+_bgButtons.forEach((b) => {
+  b.addEventListener("click", () => {
+    _canvasContainer.style.background = `${b.dataset.color}`;
+  });
+});

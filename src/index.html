@@ -26,7 +26,7 @@
             <form class="w-full mb-4">
                 <label class="block mb-2 text-lg font-semibold" for="file">Your Video</label>
                 <input
-                    class="block w-full text-sm text-gray-900 border border-gray-300 rounded-sm cursor-pointer bg-gray-50 p-1"
+                    class="block w-full text-sm text-gray-900 border border-gray-300 rounded-sm cursor-pointer bg-gray-50 p-1 h-9"
                     id="file" type="file" />
 
             </form>
@@ -52,7 +52,14 @@
         <div class="flex flex-col p-2 justify-between">
             <div class="text-lg mb-2 font-semibold">
                 Canvas
-                <div class="w-full h-96  rounded-sm  flex items-center px-6 mt-[60px] mb-4 border shadow-md">
+                <div class="flex gap-3 mt-2 mb-4">
+                    <button title="Transparent" class="h-9 w-9 rounded-full bg-checker"
+                        data-color="transparent"></button>
+                    <button title="Black" class="h-9 w-9 rounded-full bg-black" data-color="black"></button>
+                    <button title="White" class="h-9 w-9 rounded-full bg-white border-2 border-black"
+                        data-color="white"></button>
+                </div>
+                <div class="w-full h-96 canvas-container rounded-sm  flex items-center px-6  mb-4 border shadow-md">
                     <canvas class="max-h-full max-w-full"></canvas>
                 </div>
                 <button type="button" id="save"
